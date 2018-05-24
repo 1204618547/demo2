@@ -1,0 +1,20 @@
+String& String::operator+=(const String& s)
+{
+   int len=this.len+s.len;
+   char *t=rep;
+   rep=new char[len+1];
+   strcpy(rep,t);
+   strcat(rep,s.rep);
+   delete t;
+   return *this;
+}
+const String& String::operator+(const String&a,const String& b)
+{
+    int len=a.len+b.len;
+    char t=new char[len+1];
+    strcpy(t,a.rep);
+    strcat(t,b.rep);
+    String str(t);
+    delete t;
+    return str;
+}
